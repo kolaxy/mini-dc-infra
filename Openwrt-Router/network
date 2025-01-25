@@ -1,0 +1,35 @@
+### vi /etc/config/network
+### /etc/init.d/network restart
+################################
+
+config interface 'loopback'
+        option device 'lo'
+        option proto 'static'
+        option ipaddr '127.0.0.1'
+        option netmask '255.0.0.0'
+
+config globals 'globals'
+        option packet_steering '1'
+
+config device
+        option name 'br-lan'
+        option type 'bridge'
+        list ports 'lan1'
+        list ports 'lan2'
+
+config interface 'lan'
+        option device 'br-lan'
+        option proto 'static'
+        option ipaddr 'here is ipv4 of the gateway'
+        option netmask '255.255.255.0'
+        option ip6assign '0'
+        option ipv6 '0'
+
+config interface 'wan'
+        option device 'wan'
+        option proto 'dhcp'
+        option ipv6 '0'
+
+#config interface 'wan6'
+#       option device 'wan'
+#       option proto 'dhcpv6'
