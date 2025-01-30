@@ -1,0 +1,41 @@
+FOR FREEIPA !
+
+[root@vm-vault tls]# vault read auth/ldap/config
+Key                             Value
+---                             -----
+anonymous_group_search          false
+binddn                          uid=tuz_vault,cn=users,cn=accounts,dc=,dc=
+case_sensitive_names            false
+certificate                     n/a
+connection_timeout              30
+deny_null_bind                  true
+dereference_aliases             never
+discoverdn                      false
+groupattr                       cn
+groupdn                         cn=groups,cn=accounts,dc=,dc=
+groupfilter                     (|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))
+insecure_tls                    true
+max_page_size                   0
+password_policy                 n/a
+request_timeout                 90
+starttls                        false
+tls_max_version                 tls12
+tls_min_version                 tls12
+token_bound_cidrs               []
+token_explicit_max_ttl          0s
+token_max_ttl                   0s
+token_no_default_policy         false
+token_num_uses                  0
+token_period                    0s
+token_policies                  []
+token_ttl                       0s
+token_type                      default
+upndomain                       n/a
+url                             ldap(s)://ipa:389(636)
+use_pre111_group_cn_behavior    false
+use_token_groups                false
+userattr                        uid
+userdn                          cn=users,cn=accounts,dc=,dc=
+userfilter                      (uid={{.Username}})
+username_as_alias               false
+[root@vm-vault tls]# 
