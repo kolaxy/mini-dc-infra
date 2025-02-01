@@ -1,5 +1,5 @@
 ### jellyfin
-
+```
 services:
   jellyfin:
     image: jellyfin/jellyfin
@@ -26,4 +26,6 @@ services:
       - "8920:8920"   # Web UI (HTTPS) (requires SSL setup)
       - "7359:7359/udp"  # Auto-discovery
       - "1900:1900/udp"  # DLNA discovery
+```
+
 ### transmission
