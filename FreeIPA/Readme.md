@@ -16,6 +16,16 @@ sudo ipa-server-install
 
 NO DNS !
 
+CA CENTER IPA:
+
+TARGET HOST
+ openssl req -new -newkey rsa:2048 -nodes -keyout gitlab.key -out gitlab.csr -subj "/CN=gitlab.cloud.lan"
+
+IPA HOST
+ipa cert-request gitlab.csr --principal=host/gitlab.cloud.lan
+
+
+
 
 _____
 
