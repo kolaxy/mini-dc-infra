@@ -6,3 +6,6 @@ sudo mount -t cifs //192.168.0.11/share /media/sharefolder -o username=windowsus
 ```
 sudo grep 'nginx' /etc/gitlab/gitlab.rb | grep -v '^#'
 ```
+```
+firewall-cmd --permanent --zone=public --add-port=443/tcp
+```
