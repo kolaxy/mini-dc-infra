@@ -9,3 +9,9 @@ sudo grep 'nginx' /etc/gitlab/gitlab.rb | grep -v '^#'
 ```
 firewall-cmd --permanent --zone=public --add-port=443/tcp
 ```
+```
+firewall-cmd --reload
+```
+```
+firewall-cmd --list-all
+```
